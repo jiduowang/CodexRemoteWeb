@@ -1,0 +1,81 @@
+{
+  "bridgeId": "local-dev-windows",
+  "name": "Local Dev Windows",
+  "serverUrl": "http://127.0.0.1:8787",
+  "token": "dev-local-bridge-token-change-before-deploy",
+  "adapter": "codex-app-server",
+  "dataDir": "D:\\CodexApp\\.data\\threads",
+  "reconnectMs": 3000,
+  "projects": [
+    {
+      "alias": "codex-remote-web",
+      "name": "Codex Remote Web",
+      "path": "D:\\CodexApp",
+      "exposePath": false
+    }
+  ],
+  "denylist": [
+    ".env",
+    ".env.*",
+    "*.pem",
+    "*.key",
+    "*id_rsa*",
+    "*secret*"
+  ],
+  "codexAppServer": {
+    "command": "C:\\Users\\Administrator\\AppData\\Roaming\\npm\\codex.cmd",
+    "args": ["app-server", "--listen", "stdio://"],
+    "desktopProxy": {
+      "enabled": true,
+      "args": ["app-server", "proxy"],
+      "fallbackToDirect": true
+    },
+    "models": [
+      { "id": "gpt-5.5", "label": "GPT-5.5" },
+      { "id": "gpt-5.4", "label": "GPT-5.4" },
+      { "id": "gpt-5.4-mini", "label": "GPT-5.4 Mini" },
+      { "id": "gpt-5.3-codex", "label": "GPT-5.3 Codex" },
+      { "id": "gpt-5.3-codex-spark", "label": "GPT-5.3 Codex Spark" },
+      { "id": "gpt-5.2", "label": "GPT-5.2" }
+    ],
+    "reasoningEfforts": [
+      { "id": "none", "label": "None" },
+      { "id": "minimal", "label": "Minimal" },
+      { "id": "low", "label": "Low" },
+      { "id": "medium", "label": "Medium" },
+      { "id": "high", "label": "High" },
+      { "id": "xhigh", "label": "XHigh" }
+    ],
+    "reasoningSummary": "auto",
+    "serviceTiers": [
+      { "id": "default", "label": "Default tier" },
+      { "id": "flex", "label": "Flex" },
+      { "id": "priority", "label": "Priority" }
+    ],
+    "desktopSync": {
+      "statusNotifications": false
+    },
+    "methods": {
+      "initialize": "initialize",
+      "listThreads": "thread/list",
+      "readThread": "thread/read",
+      "createThread": "thread/start",
+      "resumeThread": "thread/resume",
+      "startTurn": "turn/start",
+      "interruptTurn": "turn/interrupt",
+      "startReview": "review/start"
+    },
+    "desktopUi": {
+      "enabled": false,
+      "processNamePattern": "Codex|codex",
+      "windowTitlePattern": "Codex",
+      "preferForeground": false,
+      "allowForegroundFallback": false,
+      "allowNonCodexForeground": false,
+      "restoreClipboard": true,
+      "submitKeys": "{ENTER}",
+      "focusDelayMs": 350,
+      "timeoutMs": 15000
+    }
+  }
+}
