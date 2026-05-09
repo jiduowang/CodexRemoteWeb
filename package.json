@@ -1,0 +1,22 @@
+{
+  "name": "codex-remote-web",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Cross-platform Web/PWA control surface for a local Codex Bridge.",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "start:server": "node server/index.js",
+    "start:bridge": "node bridge/index.js",
+    "dev:server": "node server/index.js",
+    "dev:bridge": "node bridge/index.js"
+  },
+  "keywords": [
+    "codex",
+    "remote",
+    "bridge",
+    "pwa"
+  ],
+  "license": "UNLICENSED"
+}

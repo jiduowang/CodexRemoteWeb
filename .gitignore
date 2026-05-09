@@ -1,0 +1,6 @@
+.data/
+*.log
+node_modules/
+server/.data/
+bridge/config.json
+*.local.json
